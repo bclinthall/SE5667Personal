@@ -1,0 +1,13 @@
+Run the node server to listen on a local host port.
+You can manage the app with pm2 or just with systemd. pm2 has more features. Is built into linux usually.
+Set up nginx as a reverse proxy server, redirecting traffic from the path desired to some localhost port where the app is running. 
+
+If you type `pm2 startup systemd` you get instructions on how to make pm2 generate a startup script for you.  
+I have a pm2 startup script now.
+pm2 has a list of applications it manages. To save the list of currently managed applications as the ones it should startup 
+next time, `pm2 save`. To remove something from its list of currently managed applications `pm2 delete <applicationName>`.
+To add something `pm2 start <filePath>`.
+
+nginx configuration file is at `/etc/nginx/sites-available/default`
+after modifying config file, run `sudo nginx -t` to ensure it is error free.
+Then run `sudo systemctl restart nginx` to restart nginx.
