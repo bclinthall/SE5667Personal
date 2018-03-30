@@ -1,3 +1,13 @@
 There is a helpful partial specification of methods available on the 
 express application, request, and respones objects in the book in the section "The application,
-requets, and response objects".
+requests, and response objects".
+
+Configuration:
+Set the NODE_ENV variable in the shell. It will then be available in js files as 
+process.env.NODE_ENV. Confirm that it is properly set in the main file (server.js).
+
+config/config.js loads a confiuration file from the env directory, depending 
+on the process.env.NODE_ENV variable.
+Use a `const config = require('..../config');` where you need access to the 
+variables defined in it.
+

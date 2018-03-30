@@ -40,3 +40,19 @@ db.posts.find( { $or: [{ "user": "alice" }, { "user": "bob" }] })
 
 
 `db.collection.remove(<query>, bool justOne)` .
+
+## Mongoose
+`const mongoose = require('mongoose');`
+Construct a schema: `MySchema = mongoose.Schema({key1: String, ...});`
+Use the schema to register a model `mongoose.model('User, MySchema');`
+
+* Define schemas and register models in a model file. 
+* require the model file in the mongoose config file.
+* call the config file in the server file.
+
+The express setup follows a similar pattern.
+* The server file calls the config file. 
+* The config file requires the routes file (and passes it the app)
+* The route requires the controller.
+
+
