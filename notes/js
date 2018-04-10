@@ -1,0 +1,10 @@
+ECMA 2015 
+Import: works kinda like in python.
+Export
+Export says what can be imported. It prevents namespace pollution. Not every variable
+in a file gets imported when you import the file. Only the exported ones. 
+
+CommonJS Modules
+As best I can tell, a module is like a singleton. You can require it in one place, 
+do something to it, require it in a different place and it retains the state 
+you gave it in the first place.
