@@ -87,4 +87,23 @@ An instance of a mongoose model has a remove method.
 
 ### Default Values
 Include in schema/model document.
+Remember, the schema was defined with key: value pairs. You can use an object as the value. That object will be key value pairs. Use a `default` key to include a function that generates a default value.
+
+### Modifiers
+Include `get` or `set` key with a function value to modify stuff on set or get.
+
+For the getter modifiers, must enable them using  
+`Schema.set('toJSON', {getters: true});` 
+
+### Virtuals
+If you want a fullName field, then you don't actually need a real field, make it a virtual field.
+
+### Indexes
+You can enforce uniqueness of a field with `unique: true`
+
+You can make a secondary index with `index: true`
+
+
+
+
 
