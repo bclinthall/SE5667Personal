@@ -103,7 +103,33 @@ You can enforce uniqueness of a field with `unique: true`
 
 You can make a secondary index with `index: true`
 
+### Defining custom model methods
+Use static methods like `fineOneByUsername`. The model class acts like a database. Custom CRUD methods like `findOneByUsername` should be static model methods. A model instance is like a record. Authentication and validation methods should be model instance methods.
 
+### Validation
+There are predefined validators. Like `required` which takes a boolean or `match` which takes a regex, or `enum` which takes an array.
+
+#### Custom validation
+You can use the `validate` key. It takes an array. FIrst item in array: a function that returns a boolean. Second item: error message if function returns `false`.
+
+### Mongoose middleware
+They execute some code before or after a mongoose operation (`init`, `validate`, `save`, `remove`).
+
+ 
+### Mongoose ref fields
+A field in a mongoose model can be of type Schema.ObjectId. Include a ref field specifying which schema/model to use. Ex:
+```
+author: {
+    type: Schema.ObjectId,
+    ref: 'User'
+}
+```
+You can then assign an instance of `User` to the author field. You dont have to find the user's id.
+
+When retrieving the object, you need to tell it to fetch in the data from the User table.
+```
+Post.find().populate('author').exec((err, posts) => {...});
+```
 
 
 
