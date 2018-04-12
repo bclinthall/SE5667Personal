@@ -1,7 +1,7 @@
-// Set the 'development' environment configuration object
+// Set the 'production' environment configuration object
 module.exports = {
-	db: 'mongodb://localhost/mean-development',
-	sessionSecret: 'developmentSessionSecret',
+	db: 'mongodb://localhost/mean-production',
+	sessionSecret: 'productionSessionSecret',
 	facebook: {
 		clientID: 'Facebook Application ID',
 		clientSecret: 'Facebook Application Secret',
